@@ -56,6 +56,17 @@
                     }, 1000); // Match the duration of the transition
                 });
             });
+ // Handle page transition for clickable images
+ document.querySelectorAll('.link-item').forEach(item => {
+                item.addEventListener('click', function() {
+                    const href = this.getAttribute('data-href');
+
+                    document.body.classList.remove('page-transition-active');
+                    setTimeout(() => {
+                        window.location.href = href;
+                    }, 1000); // Match the duration of the transition
+                });
+            });
         });
     </script>
 </body>
