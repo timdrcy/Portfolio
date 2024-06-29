@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="page-transition">
+    <header>
+        <h1>Timothy Darcy</h1>
+        <nav>
+            <ul>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div id="content">
+        <main>
+            <section class="intro">
+                <div class="intro-text">
+                    <h2>Welcome to my portfolio</h2>
+                    <p>Explore my work in sound design, composition, and game development.</p>
+                </div>
+                <section class="links">
+                    <div class="link-item" onclick="location.href='projects.html'">
+                        <img src="documents.png" alt="Projects">
+                        <p>Projects</p>
+                    </div>
+                    <div class="link-item" onclick="location.href='about.html'">
+                        <img src="about-12.png" alt="About">
+                        <p>About</p>
+                    </div>
+                </section>
+            </section>
+        </main>
+    </div>
+    <footer>
+        <a href="http://www.youtube.com/@tincgames" target="_blank"><img src="youtube-icon.png" alt="YouTube"></a>
+        <a href="https://www.linkedin.com/in/timothy-darcy-484072272/" target="_blank"><img src="linkedin-icon-2048x2048-3mmtnow6.png" alt="LinkedIn"></a>
+    </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            document.body.classList.add('page-transition-active');
+
+            document.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const href = this.getAttribute('href');
+
+                    document.body.classList.remove('page-transition-active');
+                    setTimeout(() => {
+                        window.location.href = href;
+                    }, 1000); // Match the duration of the transition
+                });
+            });
+        });
+    </script>
+</body>
+</html>

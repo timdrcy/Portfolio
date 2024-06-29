@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demure</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="page-transition">
+    <header>
+        <h1>DadsDayOut</h1>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="dads-container">
+            <div class="soundtracks">
+                <h2>Soundtracks</h2>
+                <div class="soundtrack-item">
+                    <p>Main Menu</p>
+                    <audio controls>
+                        <source src="MainMenuProjCustomer_FINAL_.wav" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+                <div class="soundtrack-item">
+                    <p>Lobby Music</p>
+                    <audio controls>
+                        <source src="lobbymusicproj4_final__1.wav" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+                <div class="soundtrack-item">
+                    <p>Gameboy Music</p>
+                    <audio controls>
+                        <source src="gameboymusicmain.wav" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+                <div class="soundtrack-item">
+                    <p>End Music</p>
+                    <audio controls>
+                        <source src="endmusicgame.wav" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+            </div>
+            <div class="game-details">
+                <div class="game-trailer">
+                    <h2>Game Trailer</h2>
+                    <video controls>
+                        <source src="FinalCinematics.mp4" type="video/mp4">
+                        Your browser does not support the video element.
+                    </video>
+                </div>
+                <div class="game-description">
+                    <h2>About the Game</h2>
+                    <p>"Dad's Day Out" was a collaborative effort by a team comprising two designers, three artists, and one engineer. With a tight timeline of three weeks, our mission was to explore the theme of fatherhood through gaming. The game seeks to convey a heartfelt message about the joys and challenges of parenting while ensuring an enjoyable player experience. Through engaging gameplay mechanics and narrative elements, we aimed to show what it means to be a parent, offering players a blend of fun and meaningful reflection on these important aspects of life.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <a href="https://www.youtube.com/channel/yourchannel" target="_blank"><img src="youtube-icon.png" alt="YouTube"></a>
+        <a href="https://www.linkedin.com/in/yourprofile" target="_blank"><img src="LittleHelperFinal.png" alt="LinkedIn"></a>
+    </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            document.body.classList.add('page-transition-active');
+
+            document.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const href = this.getAttribute('href');
+
+                    document.body.classList.remove('page-transition-active');
+                    setTimeout(() => {
+                        window.location.href = href;
+                    }, 1000); // Match the duration of the transition
+                });
+            });
+        });
+    </script>
+</body>
+</html>

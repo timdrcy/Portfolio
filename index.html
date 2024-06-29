@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intro</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="intro-container">
+        <div class="intro-text" id="introText"></div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const textArray = [
+                "Hello, my name is Timothy Darcy.",
+                "I'm a Sound Designer.",
+                "A Game Designer.",
+                "And this is my portfolio."
+            ];
+            
+            const introText = document.getElementById("introText");
+            let charIndex = 0;
+            let textIndex = 0;
+
+            function typeText() {
+                if (charIndex < textArray[textIndex].length) {
+                    introText.innerHTML += textArray[textIndex].charAt(charIndex);
+                    charIndex++;
+                    setTimeout(typeText, 50);
+                } else {
+                    setTimeout(() => {
+                        charIndex = 0;
+                        introText.innerHTML = "";
+                        textIndex++;
+                        if (textIndex < textArray.length) {
+                            typeText();
+                        } else {
+                            setTimeout(() => {
+                                introText.classList.add("fade-out");
+                                setTimeout(() => {
+                                    window.location.href = "home.html"; // Redirect to homepage after fade-out
+                                }, 0); // Duration of the fade-out effect
+                            }, 0);
+                        }
+                    }, 1000);
+                }
+            }
+            
+            typeText();
+        });
+    </script>
+</body>
+</html>

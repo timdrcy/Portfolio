@@ -1,0 +1,453 @@
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap');
+
+/* General Styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    background: #2d2d2d; /* Neutral background color */
+    background-image: url('portfoliobackgroundblur.png'); /* Use the correct image file name */
+    background-size: cover; /* Ensure the image covers the entire background */
+    background-position: center; /* Center the image */
+    background-attachment: fixed; /* Fixed background for parallax effect */
+    color: #ffffff;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.intro-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100vh;
+}
+
+.intro-text {
+    font-size: 2rem;
+    color: #ffffff;
+    font-weight: 600;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+    animation-delay: 0.5s;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+.fade-out {
+    animation: fadeOut 1s forwards;
+}
+
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+    }
+}
+
+/* Page Transition Styles */
+.page-transition {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.page-transition-active {
+    opacity: 1;
+}
+
+#content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+header {
+    background: #333;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 4px 4px 8px #1c1c1c, -4px -4px 8px #404040;
+    border-radius: 0;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-sizing: border-box;
+}
+
+header h1 {
+    margin: 0;
+    color: #ffffff;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    box-shadow: 4px 4px 8px #1c1c1c, -4px -4px 8px #404040;
+    transition: box-shadow 0.3s ease;
+}
+
+nav a:hover {
+    box-shadow: 2px 2px 4px #1c1c1c, -2px -2px 4px #404040;
+}
+
+main {
+    padding: 5rem 2rem 2rem; /* Adjust padding to account for fixed header */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    flex-grow: 1;
+    margin-top: 60px;
+    overflow-y: auto; /* Enable vertical scrolling */
+    width: 100%;
+    max-width: 1200px; /* Limit the max width for better readability */
+}
+
+footer {
+    background: #333;
+    color: #ffffff;
+    text-align: center;
+    padding: 1rem;
+    box-shadow: 4px 4px 8px #1c1c1c, -4px -4px 8px #404040;
+    border-radius: 0;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem; /* Add some space between the images */
+}
+
+footer img {
+    max-width: 30px; /* Set a maximum width for the images */
+    height: auto;
+    cursor: pointer;
+}
+
+/* Intro Page Styles */
+.intro {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.intro-text {
+    font-size: 2rem;
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 2rem; /* Add some spacing between the text and the links */
+}
+
+/* Content Styles */
+.content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.item {
+    background: #333;
+    padding: 1rem;
+    border-radius: 20px;
+    box-shadow: 4px 4px 8px #1c1c1c, -4px -4px 8px #404040;
+    width: 150px;
+    text-align: center;
+    cursor: pointer;
+    transition: box-shadow 0.3s ease;
+}
+
+.item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.item:hover {
+    box-shadow: 2px 2px 4px #1c1c1c, -2px -2px 4px #404040;
+}
+
+/* Project Page Styles */
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Grid layout with responsive columns */
+    gap: 4rem; /* Increase gap between items */
+    padding: 4rem; /* Add padding to the container */
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.project-item {
+    background: rgba(51, 51, 51, 0.1); /* Set background color with opacity */
+    padding: 1.5rem; /* Increase padding for larger items */
+    border-radius: 6px;
+    box-shadow: 0.5px 0.5px 1px #404040, -0.5px -0.5px 1.5px #404040;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 0.5rem;
+    opacity: 1; /* Ensure the image is fully opaque */
+}
+
+.project-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 3px 3px 8px #1c1c1c, -3px -3px 8px #404040;
+}
+
+.project-item p {
+    margin-top: 0.5rem;
+    font-size: 1.2rem;
+}
+
+/* Demure Page Styles */
+.demure-container {
+    display: flex;
+    position: absolute;
+    left: 25%;
+    bottom: 5%;
+    gap: 4rem; /* Increase gap between elements */
+    padding: 2rem;
+    width: 100%;
+    max-width: 1400px; /* Increase max width */
+    box-sizing: border-box;
+
+}
+
+.dads-container {
+    display: flex;
+    position: absolute;
+    left: 25%;
+    bottom: 5%;
+    gap: 4rem; /* Increase gap between elements */
+    padding: 2rem;
+    width: 100%;
+    max-width: 1400px; /* Increase max width */
+    box-sizing: border-box;
+
+}
+
+.soundtracks {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 300px;
+}
+
+.soundtrack-item {
+    background: #333;
+    padding: 1rem;
+    border-radius: 20px;
+    box-shadow: 8px 8px 16px #1c1c1c, -8px -8px 16px #404040;
+    text-align: center;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.soundtrack-item p {
+    margin: 0;
+    font-weight: 600;
+}
+
+.soundtrack-item audio {
+    width: 100%;
+    margin-top: 0.5rem;
+}
+
+.game-details {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 600px;
+}
+
+.game-trailer {
+    background: #333;
+    padding: 1rem;
+    border-radius: 20px;
+    box-shadow: 8px 8px 16px #1c1c1c, -8px -8px 16px #404040;
+    text-align: center;
+}
+
+.game-trailer video {
+    width: 100%;
+    height: auto;
+}
+
+.game-description {
+    background: #333;
+    padding: 1rem;
+    border-radius: 20px;
+    box-shadow: 8px 8px 16px #1c1c1c, -8px -8px 16px #404040;
+    text-align: center;
+}
+
+.game-description p {
+    margin: 0;
+    font-size: 1rem;
+}
+
+/* Intro Section Styles */
+.intro h2 {
+    margin-bottom: 1rem;
+}
+
+/* Link Section Styles */
+.links {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-top: 2rem;
+}
+
+.link-item {
+    background: #333;
+    padding: 1rem;
+    border-radius: 20px;
+    box-shadow: 4px 4px 8px #1c1c1c, -4px -4px 8px #404040;
+    text-align: center;
+    cursor: pointer;
+    transition: box-shadow 0.3s ease;
+    width: 20%; /* Make the boxes smaller */
+    opacity: 0.8; /* Ensure the image is fully opaque */
+}
+
+.link-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.link-item:hover {
+    box-shadow: 2px 2px 4px #1c1c1c, -2px -2px 4px #404040;
+}
+
+.link-item p {
+    margin-top: 0.5rem;
+    font-size: 1.2rem;
+}
+
+/* Contact Page Styles */
+.contact-container {
+    background: #333;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 4px 4px 8px #1c1c1c, -4px -4px 8px #404040;
+    width: 90%;
+    max-width: 600px;
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact-container h2 {
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+}
+
+.contact-form label {
+    font-size: 1rem;
+    color: #ffffff;
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: 10px;
+    border: none;
+    background: #ffffff; /* Change background color */
+    color: #000; /* Change text color */
+    box-shadow: inset 1px 0px 2px #1c1c1c, inset 0px 0px 0px #404040; /* Adjust shadow for less glow */
+    font-size: 1rem;
+}
+
+.contact-form textarea {
+    resize: none;
+    height: 150px;
+}
+
+.contact-form button {
+    padding: 0.75rem 1rem;
+    border-radius: 10px;
+    border: none;
+    background: #444;
+    color: #ffffff;
+    cursor: pointer;
+    box-shadow: 4px 4px 8px #1c1c1c, -4px -4px 8px #404040;
+    transition: box-shadow 0.3s ease;
+}
+
+.contact-form button:hover {
+    box-shadow: 2px 2px 4px #1c1c1c, -2px -2px 4px #404040;
+}
+
+/* About Page Styles */
+.about-container {
+    background: rgba(51, 51, 51, 0.6);
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 4px 4px 8px #1c1c1c, -4px -4px 8px #404040;
+    width: 90%;
+    max-width: 800px;
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.about-container img {
+    border-radius: 10px;
+    max-width: 300px; /* Increased image size */
+    margin-bottom: 1rem; /* Reduced margin */
+    opacity: 0.9; /* Ensure the image is fully opaque */
+}
+
+.about-container p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    text-align: center;
+    padding: 1rem;
+    background: #222;
+    border-radius: 10px;
+    box-shadow: inset 4px 4px 8px #1c1c1c, inset -4px -4px 8px #1c1c1c;
+    width: 100%; /* Ensures the text box width is consistent */
+    max-width: 600px; /* Limits the text box width */
+    opacity: 0.8; /* Ensure the image is fully opaque */
+}

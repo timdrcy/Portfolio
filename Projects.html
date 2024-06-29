@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="page-transition">
+    <header>
+        <h1>Projects</h1>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div id="content">
+        <main class="projects-container">
+            <div class="project-item" onclick="location.href='demure.html'">
+                <img src="LittleHelperFinal.png" alt="Little Helper">
+                <p>Little Helper</p>
+            </div>
+            <div class="project-item" onclick="location.href='BeatBoxBites.html'">
+                <img src="BeatBoxBitesFinal.png" alt="Beat! Box: Bites!">
+                <p>Beat! Box: Bites!</p>
+            </div>
+            <div class="project-item" onclick="location.href='demure.html'">
+                <img src="FixFinal.png" alt="Fix">
+                <p>Fix</p>
+            </div>
+            <div class="project-item" onclick="location.href='DadsDayOut.html'">
+                <img src="DadsDayOutFinal.png" alt="Dad's Day Out">
+                <p>Dad's Day Out</p>
+            </div>
+            <div class="project-item" onclick="location.href='demure.html'">
+                <img src="DemureFinal.png" alt="Demure">
+                <p>Demure</p>
+            </div>
+            <div class="project-item" onclick="location.href='demure.html'">
+                <img src="IceAgeFinal.png" alt="Monster Project: IceAge">
+                <p>Monster Project: IceAge</p>
+            </div>
+            <div class="project-item" onclick="location.href='demure.html'">
+                <p>Solo Projects</p>
+            </div>
+        </main>
+    </div>
+    <footer>
+        <a href="http://www.youtube.com/@tincgames" target="_blank"><img src="youtube-icon.png" alt="YouTube"></a>
+        <a href="https://www.linkedin.com/in/timothy-darcy-484072272/" target="_blank"><img src="linkedin-icon-2048x2048-3mmtnow6.png" alt="LinkedIn"></a>
+    </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            document.body.classList.add('page-transition-active');
+
+            document.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const href = this.getAttribute('href');
+
+                    document.body.classList.remove('page-transition-active');
+                    setTimeout(() => {
+                        window.location.href = href;
+                    }, 1000); // Match the duration of the transition
+                });
+            });
+        });
+    </script>
+</body>
+</html>

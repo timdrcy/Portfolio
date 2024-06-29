@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demure</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="page-transition">
+    <header>
+        <h1>Demure</h1>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="demure-container">
+            <div class="soundtracks">
+                <h2>Soundtracks</h2>
+                <div class="soundtrack-item">
+                    <p>Sunflower Fields</p>
+                    <audio controls>
+                        <source src="Sunflowerfields.wav" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+                <div class="soundtrack-item">
+                    <p>Clockwork Garden</p>
+                    <audio controls>
+                        <source src="ClockworkGarden.wav" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+                <div class="soundtrack-item">
+                    <p>Observatory</p>
+                    <audio controls>
+                        <source src="ObservatoryTheme.wav" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+                <div class="soundtrack-item">
+                    <p>Boss Fight</p>
+                    <audio controls>
+                        <source src="BossTheme.wav" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+            </div>
+            <div class="game-details">
+                <div class="game-trailer">
+                    <h2>Game Trailer</h2>
+                    <video controls>
+                        <source src="Demure_trailer.mp4" type="video/mp4">
+                        Your browser does not support the video element.
+                    </video>
+                </div>
+                <div class="game-description">
+                    <h2>About the Game</h2>
+                    <p>In a team effort involving two designers, three artists, and one engineer, the story of Lily unfolds. She's a young girl facing neglect and mistreatment, finding strength in nightmares filled with creatures that symbolize her fears and past struggles. Guided by a voice like her grandfather's, she confronts these monsters, discovering her own resilience. This project combines deep storytelling with Metroidvania-style gameplay, aiming to immerse players in a journey of self-discovery and overcoming challenges.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <a href="https://www.youtube.com/channel/yourchannel" target="_blank"><img src="youtube-icon.png" alt="YouTube"></a>
+        <a href="https://www.linkedin.com/in/yourprofile" target="_blank"><img src="LittleHelperFinal.png" alt="LinkedIn"></a>
+    </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            document.body.classList.add('page-transition-active');
+
+            document.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const href = this.getAttribute('href');
+
+                    document.body.classList.remove('page-transition-active');
+                    setTimeout(() => {
+                        window.location.href = href;
+                    }, 1000); // Match the duration of the transition
+                });
+            });
+        });
+    </script>
+</body>
+</html>
